@@ -11,7 +11,7 @@ IQA-Adapter is based on [IP-Adapter](https://github.com/tencent-ailab/IP-Adapter
 TODO list:
 - [ ] Release code for IQA-Adapter inference and training for SDXL base model
 - [ ] Release weights for IQA-Adapters trained with different IQA/IAA models
-- [ ] Create project page
+- [x] Create project page
 - [ ] Release code for experiments
 
 
