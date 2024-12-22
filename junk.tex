@@ -1,0 +1,17 @@
+\subsubsection{Architecture}
+
+To condition the generative model on image quality, we leverage IP-Adapter \cite{ye2023ip-adapter} technique, which supports image-prompt conditioning in pretrained text-to-image diffusion models. The IP-Adapter operates by projecting the CLIP embedding of an image prompt into additional tokens, which are then integrated into the model via cross-attention mechanisms. This method enables the base model to receive detailed conditioning information from non-textual sources without altering its core weights. We selected this architecture for its lightweight design, ability to preserve core model's weights, and minimal computational overhead during training and inference.
+
+As illustrated in Figure \ref{fig:arch}, we repurpose the IP-Adapter framework to pass visual quality scores as conditioning information into the generative model. We refer to this modified approach as \textbf{IQA-Adapter}. In this setup, quality scores are projected into tokens matching the dimensionality of textual tokens through a small projection module, consisting of a linear layer and LayerNorm \cite{ba2016layernormalization}. These tokens then enter the main generative model (U-Net in SDXL \cite{podellsdxl}) via cross-attention layers, allowing the model to adjust image quality based on specified IQA scores.
+
+IQA-Adapter can accept multiple IQA scores as input, allowing for the integration of various IQA/IAA models that capture different aspects of image fidelity, e.g., quality in terms of distortions and overall aesthetics of the image. To ensure consistency, all metric values are standardized to have zero mean and unit variance based on the training dataset.
+
+A key feature of IQA-Adapter, inherited from the IP-Adapter, is its \textbf{Decoupled Cross-Attention} mechanism, which enables the model to process adapter tokens separately from textual prompt tokens. Specifically, the adapter adds an additional cross-attention layer for each existing cross-attention operation in the base model. Without an adapter, the base model processes the textual conditioning \(c_t\) as follows:
+$$\operatorname{Attention}(Z, c_t) = \operatorname{Softmax}\left(\frac{Q K^T}{\sqrt{d}}\right) V$$
+
+\noindent where $Q = Z W_q$, $K = c_t W_k$, $V = c_t W_v$, $Z$ are image features and $d$ is the projection space dimension. When the adapter is added, the attention mechanism is modified as follows:
+%With the adapter in place, this becomes:
+$$\operatorname{DecAttention}(Z, c_t, c_q) = $$
+$$\operatorname{Softmax}\left(\frac{Q K^T}{\sqrt{d}}\right) V + \lambda\times\operatorname{Softmax}\left(\frac{Q K'^T}{\sqrt{d}}\right) V' $$
+
+\noindent where $K' = c_q W'_k$, $V' = c_q W'_v$, and $c_q$ are the quality conditioning features. Notably, the query matrix $W_q$ that processes the generated image features $Z$ is shared across both attention operations. This setup allows the IQA-Adapter to learn and apply quality-specific attributes independently from the text-based conditioning and generalize them across various textual contexts. To control the strength of the IQA-Adapter during inference, we introduce a scaling parameter $\lambda$, which adjusts the impact of quality conditioning by modifying the cross-attention term for quality features.
