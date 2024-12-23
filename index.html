@@ -1,199 +1,317 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="In this work, we propose methods to integrate image quality assessment (IQA) models into diffusion-based generators">
-  <meta property="og:title" content="IQA-Adapter: Exploring Knowledge Transfer from Image Quality Assessment to Diffusion-based Generative Models"/>
-  <meta property="og:description" content="In this work, we propose methods to integrate image quality assessment (IQA) models into diffusion-based generators"/>
-  <meta property="og:url" content="TODO"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-
-  <meta name="twitter:title" content="IQA-Adapter: Exploring Knowledge Transfer from Image Quality Assessment to Diffusion-based Generative Models">
-  <meta name="twitter:description" content="In this work, we propose methods to integrate image quality assessment (IQA) models into diffusion-based generators">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/2d_viz_converted_1.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="text-to-image, image quality assessment, adapter">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <title>IQA-Adapter: Exploring Knowledge Transfer from Image Quality Assessment to Diffusion-based Generative Models
-  </title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
-</head>
-<body>
-
-
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">IQA-Adapter: Exploring Knowledge Transfer from Image Quality Assessment to Diffusion-based Generative Models
-            </h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Abud Khaled</a><sup>1,3</sup>,</span>
-                <span class="author-block">
-                  <a href="https://scholar.google.com/citations?hl=ru&user=kZIssRYAAAAJ" target="_blank">Sergey Lavrushkin</a><sup>1,2</sup>,</span>
-                  <span class="author-block">
-                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=ru&hl=ru&user=dimn1A8AAAAJ" target="_blank">Alexey Kirillov</a><sup>3,4</sup>,</span>
-                      <span class="author-block">
-                      <a href="https://scholar.google.com/citations?hl=ru&user=545J9E4AAAAJ" target="_blank">Dmitriy Vatolin
-                      </a><sup>1,2,3</sup>
-                    </span>
-                    </a>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">
-                      <sup>1</sup>MSU Institute for Artificial Intelligence<br>
-                      <sup>2</sup>ISP RAS Research Center for Trusted Artificial Intelligence<br>
-                      <sup>3</sup>Lomonosov Moscow State University<br>
-                      <sup>4</sup>Yandex<br>
-                    </span>
-                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2412.01794.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- Supplementary PDF link -->
-                    <!-- <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span> -->
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/X1716/IQA-Adapter" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2412.01794" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+    <head>
+        <meta charset="utf-8">
+        <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+        <!-- Replace the content tag with appropriate information -->
+        <meta name="description"
+            content="In this work, we propose methods to integrate image quality assessment (IQA) models into diffusion-based generators">
+        <meta property="og:title"
+            content="IQA-Adapter: Exploring Knowledge Transfer from Image Quality Assessment to Diffusion-based Generative Models">
+        <meta property="og:description"
+            content="In this work, we propose methods to integrate image quality assessment (IQA) models into diffusion-based generators">
+        <meta property="og:url" content="TODO">
+        <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+        <meta property="og:image" content="static/image/your_banner_image.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta name="twitter:title"
+            content="IQA-Adapter: Exploring Knowledge Transfer from Image Quality Assessment to Diffusion-based Generative Models">
+        <meta name="twitter:description"
+            content="In this work, we propose methods to integrate image quality assessment (IQA) models into diffusion-based generators">
+        <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+        <meta name="twitter:image"
+            content="static/images/2d_viz_converted_1.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <!-- Keywords for your paper to be indexed by-->
+        <meta name="keywords"
+            content="text-to-image, image quality assessment, adapter">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            IQA-Adapter: Exploring Knowledge Transfer from Image Quality
+            Assessment to Diffusion-based Generative Models
+        </title>
+        <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+        <link
+            href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+            rel="stylesheet">
+        <link rel="stylesheet" href="static/css/bulma.min.css">
+        <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+        <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+        <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link rel="stylesheet" href="static/css/index.css">
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+        <script defer src="static/js/fontawesome.all.min.js"></script>
+        <script src="static/js/bulma-carousel.min.js"></script>
+        <script src="static/js/bulma-slider.min.js"></script>
+        <script src="static/js/index.js"></script>
+    </head>
+    <body>
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered">
+                        <div class="column has-text-centered">
+                            <h1 class="title is-1 publication-title">IQA-Adapter:
+                                Exploring Knowledge Transfer from Image Quality
+                                Assessment to Diffusion-based Generative Models</h1>
+                            <div class="is-size-5 publication-authors">
+                                <!-- Paper authors -->
+                                <span class="author-block">
+                                    <a href="FIRST AUTHOR PERSONAL LINK"
+                                        target="_blank">Abud Khaled</a>
+                                    <sup>1,3</sup>
+                                    ,
+                                </span>
+                                <span class="author-block">
+                                    <a
+                                        href="https://scholar.google.com/citations?hl=ru&user=kZIssRYAAAAJ"
+                                        target="_blank">Sergey Lavrushkin</a>
+                                    <sup>1,2</sup>
+                                    ,
+                                </span>
+                                <span class="author-block">
+                                    <a
+                                        href="https://scholar.google.com/citations?view_op=list_works&hl=ru&hl=ru&user=dimn1A8AAAAJ"
+                                        target="_blank">Alexey Kirillov</a>
+                                    <sup>3,4</sup>
+                                    ,
+                                </span>
+                                <span class="author-block">
+                                    <a
+                                        href="https://scholar.google.com/citations?hl=ru&user=545J9E4AAAAJ"
+                                        target="_blank">Dmitriy Vatolin</a>
+                                    <sup>1,2,3</sup>
+                                </span>
+                            </div>
+                            <div class="is-size-5 publication-authors">
+                                <span class="author-block">
+                                    <sup>1</sup>
+                                    MSU Institute for Artificial Intelligence
+                                    <br>
+                                    <sup>2</sup>
+                                    ISP RAS Research Center for Trusted
+                                    Artificial Intelligence
+                                    <br>
+                                    <sup>3</sup>
+                                    Lomonosov Moscow State University
+                                    <br>
+                                    <sup>4</sup>
+                                    Yandex
+                                    <br>
+                                </span>
+                                <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+                            </div>
+                            <div class="column has-text-centered">
+                                <div class="publication-links">
+                                    <!-- Arxiv PDF link -->
+                                    <span class="link-block">
+                                        <a
+                                            href="https://arxiv.org/pdf/2412.01794.pdf"
+                                            target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </span>
+                                            <span>Paper</span>
+                                        </a>
+                                    </span>
+                                    <!-- Github link -->
+                                    <span class="link-block">
+                                        <a
+                                            href="https://github.com/X1716/IQA-Adapter"
+                                            target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="fab fa-github"></i>
+                                            </span>
+                                            <span>Code</span>
+                                        </a>
+                                    </span>
+                                    <!-- ArXiv abstract Link -->
+                                    <span class="link-block">
+                                        <a
+                                            href="https://arxiv.org/abs/2412.01794"
+                                            target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="ai ai-arxiv"></i>
+                                            </span>
+                                            <span>arXiv</span>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Teaser image-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-        <img src="static/images/2d_viz_converted_1.jpg" alt="MY ALT TEXT"/>
-        <!-- <h2 class="subtitle has-text-centered">
+        </section>
+        <!-- Teaser image-->
+        <section class="hero teaser">
+            <div class="container is-max-desktop">
+                <div class="hero-body">
+                    <img src="static/images/2d_viz_converted_1.jpg"
+                        alt="MY ALT TEXT">
+                    <!-- <h2 class="subtitle has-text-centered">
           Overview of the proposed layer-wise calibration procedure before fine-tuning.
         </h2> -->
-    </div>
-  </div>
-</section>
-<!-- End teaser image -->
+                </div>
+            </div>
+        </section>
+        <!-- End teaser image -->
+        <!-- Paper abstract -->
+        <section class="section hero is-light">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-3">Abstract</h2>
+                        <div class="content has-text-justified">
+                            <p>
+                                Diffusion-based models have recently transformed
+                                conditional image generation, achieving
+                                unprecedented fidelity in generating
+                                photorealistic and semantically accurate images.
+                                However, consistently generating high-quality
+                                images remains challenging, partly due to the
+                                lack of mechanisms for conditioning outputs on
+                                perceptual quality. In this work, we propose
+                                methods to integrate image quality assessment
+                                (IQA) models into diffusion-based generators,
+                                enabling quality-aware image generation.
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;First, we experiment
+                                with gradient-based guidance to optimize image
+                                quality directly and show this approach has
+                                limited generalizability. To address this, we
+                                introduce
+                                <b>IQA-Adapter</b>
+                                , a novel architecture that conditions
+                                generation on target quality levels by learning
+                                the relationship between images and quality
+                                scores. When conditioned on high target quality,
+                                IQA-Adapter shifts the distribution of generated
+                                images towards a higher-quality subdomain. This
+                                approach achieves up to a 10% improvement across
+                                multiple objective metrics, as confirmed by a
+                                subjective study, while preserving generative
+                                diversity and content. Additionally, IQA-Adapter
+                                can be used inversely as a degradation model,
+                                generating progressively more distorted images
+                                when conditioned on lower quality scores. Our
+                                quality-aware methods also provide insights into
+                                the adversarial robustness of IQA models,
+                                underscoring the potential of quality
+                                conditioning in generative modeling and the
+                                importance of robust IQA methods.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Architecture -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <div class="content has-text-justified">
+                            <h2 class="title is-3">Architecture</h2>
+                            <p>
+                                We use the IP-Adapter technique to condition the
+                                generative model on image quality by integrating
+                                visual quality scores into the model without
+                                altering core weights, implemented as the
+                                IQA-Adapter. The IQA-Adapter projects these
+                                scores into tokens processed through decoupled
+                                cross-attention layers, enabling adjustments
+                                based on specified quality scores. It can
+                                integrate multiple image fidelity aspects and
+                                includes a scaling parameter to control quality
+                                conditioning impact during inference.
+                            </p>
+                        </div>
+                        <img src="static/images/overall_scheme_converted-1.jpg">
+                        <!-- <h2 class="subtitle has-text-centered"> -->
+                            <br>
+                            Overall architecture of the proposed IQA-Adapter. 
+                            It allows to condition diffusion model on outputs of IQA model.
+                        <!-- </h2> -->
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Diffusion-based models have recently transformed conditional image generation, achieving unprecedented fidelity in generating photorealistic and semantically accurate images. However, consistently generating high-quality images remains challenging, partly due to the lack of mechanisms for conditioning outputs on perceptual quality. In this work, we propose methods to integrate image quality assessment (IQA) models into diffusion-based generators, enabling quality-aware image generation.<br>
+        <!-- High-quality conditioning -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <div class="content has-text-justified">
+                            <h2 class="title is-3">High-quality conditioning</h2>
+                            <p>
+                                The results depicted in Figure (a) show that IQA-Adapters trained on various IQA/IAA models consistently improve image quality over the base model, with average relative gains of 4-6%. Conditioning on high target quality (99th percentile) leads to quality improvements across multiple metrics, demonstrating cross-metric transferability. The subjective study in Figure (b) further confirms these results, where participants preferred images generated with quality-conditioned IQA-Adapters over those from the base model, especially at higher quality levels. Pairwise win rates in Figure (c) indicate that images conditioned on the highest quality levels outperform those conditioned on medium or low levels. 
+                            </p>
+                        </div>
+                        <img src="static/images/heatmap_with_subj_converted_page-0001.jpg">
+                        <!-- <h2 class="subtitle has-text-centered"> -->
+                            <br>
+                            (a) IQA-Adapters conditioned on 99th-percentile metrics achieve consistent quality improvements across models and metrics. <br> (b, c) Subjective study results show higher win rates and preference for images generated with higher quality conditioning. 
+                        <!-- </h2> -->
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            &nbsp;&nbsp;&nbsp;&nbsp;First, we experiment with gradient-based guidance to optimize image quality directly and show this approach has limited generalizability. To address this, we introduce <b>IQA-Adapter</b>, a novel architecture that conditions generation on target quality levels by learning the relationship between images and quality scores. When conditioned on high target quality, IQA-Adapter shifts the distribution of generated images towards a higher-quality subdomain. This approach achieves up to a 10% improvement across multiple objective metrics, as confirmed by a subjective study, while preserving generative diversity and content. Additionally, IQA-Adapter can be used inversely as a degradation model, generating progressively more distorted images when conditioned on lower quality scores. Our quality-aware methods also provide insights into the adversarial robustness of IQA models, underscoring the potential of quality conditioning in generative modeling and the importance of robust IQA methods.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+        <!-- Alignment with qualitative condition -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <div class="content has-text-justified">
+                            <h2 class="title is-3">Alignment with qualitative condition</h2>
+                            <p>
+                                Figure illustrates the impact of varying quality levels on generated images using the IQA-Adapter conditioned on different percentiles (1st to 99th) of the target quality metric. The distributions in (a) show progressively higher IQA scores as the target quality increases, while (b) provides example images, showcasing sharper and more detailed visuals at higher quality levels. These results highlight the adapter's ability to align generated image quality with the specified input conditions.
+                            </p>
+                        </div>
+                        <img src="static/images/quants_standalone_page.jpg">
+                        <!-- <h2 class="subtitle has-text-centered"> -->
+                            <br>
+                            Generated image quality improves with higher percentile conditioning, showing sharper details and higher IQA scores.
+                        <!-- </h2> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artifacts -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <div class="content has-text-justified">
+                            <h2 class="title is-3">Artifacts and Biases</h2>
+                            <p>
+                                We uncover how IQA models can be pushed to their limits, revealing hidden vulnerabilities and biases. Under high guidance scales, the gradient-based method manipulates models to generate adversarial patterns unique to each, while IQA-Adapters expose subtle preferences like TOPIQ’s love for sharpness or LAION-AES’s affinity for vibrant colors. When pushed further with negative-quality guidance, these models inflate scores by exploiting biases, creating overly-stylized but hollow improvements. These discoveries show how IQA-Adapters can serve as powerful tools to probe and challenge the robustness of IQA systems.
+                            </p>
+                        </div>
+                        <img src="static/images/Artifacts_preferences_with_text_compressed.jpg">
+                        <!-- <h2 class="subtitle has-text-centered"> -->
+                            <br>
+                            The gradient-based method produces adversarial artifacts unique to each IQA model, while the IQA-Adapter reveals style biases, such as sharpness or high saturation.
+                        <!-- </h2> -->
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
-
-
-<section id="Architecture">
-  <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-five-fifths">
-          <h2 class="title is-2">Architecture</h2>
-          <div class="content has-text-justified">
-            <p>
-              We use the IP-Adapter technique to condition the generative model on image quality by integrating visual quality scores into the model without altering core weights, implemented as the IQA-Adapter. The IQA-Adapter projects these scores into tokens processed through decoupled cross-attention layers, enabling adjustments based on specified quality scores. It can integrate multiple image fidelity aspects and includes a scaling parameter to control quality conditioning impact during inference.
-            </p>
-          </div>
-          <img src="static/images/overall_scheme_converted-1.jpg"/>
-          <h2 class="subtitle has-text-centered">
-            <br>Overall architecture of the proposed IQA-Adapter. Yellow arrows demonstrate the flow of knowledge from IQA/IAA models to diffusion-based generator.
-          </h2>
-      
-    </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- Paper poster -->
-<!-- <section class="hero is-small is-light">
+        <!-- Paper poster -->
+        <!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -204,14 +322,13 @@
       </div>
     </div>
   </section> -->
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container content is-max-desktop">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>
+        <!--End paper poster -->
+        <!--BibTex citation -->
+        <section class="section" id="BibTeX">
+            <div class="container content is-max-desktop">
+                <h2 class="title">BibTeX</h2>
+                <pre>
+                    <code>
 @misc{iqaadapter,
   title={IQA-Adapter: Exploring Knowledge Transfer from Image Quality Assessment to Diffusion-based Generative Models}, 
   author={Khaled Abud and Sergey Lavrushkin and Alexey Kirillov and Dmitriy Vatolin},
@@ -221,35 +338,47 @@
   primaryClass={cs.CV},
   url={https://arxiv.org/abs/2412.01794}, 
 }
-      </code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+                    </code>
+                </pre>
+            </div>
+        </section>
+        <!--End BibTex citation -->
+        <footer class="footer">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <div class="content">
+                            <p>
+                                This page was built using the
+                                <a
+                                    href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                                    target="_blank">Academic Project Page
+                                    Template</a>
+                                which was adopted from the
+                                <a href="https://nerfies.github.io"
+                                    target="_blank">Nerfies</a>
+                                project page.
+                                You are free to borrow the source code of this
+                                website, we just ask that you link back to this
+                                page in the footer.
+                                <br>
+                                This website is licensed under a
+                                <a rel="license"
+                                    href="http://creativecommons.org/licenses/by-sa/4.0/"
+                                    target="_blank">
+                                    Creative
+                                    Commons Attribution-ShareAlike 4.0
+                                    International License
+                                </a>
+                                .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Statcounter tracking code -->
+        <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+        <!-- End of Statcounter Code -->
+    </body>
+</html>
