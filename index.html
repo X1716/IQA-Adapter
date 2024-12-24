@@ -214,13 +214,39 @@
                 </div>
             </div>
         </section>
-        <!-- Architecture -->
+
+        <!-- TLDR -->
         <section class="section">
             <div class="container is-max-desktop">
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-four-fifths">
                         <div class="content has-text-justified">
-                            <h2 class="title is-3">Architecture</h2>
+                            <h2 class="title is-3">TLDR</h2>
+                            <p>
+                                IQA-Adapter is a tool that combines Image
+                                Quality/Aesthetics Assessment (IQA/IAA) models
+                                with image-generation and enables quality-aware
+                                generation with diffusion-based models. It
+                                allows to condition image generators on target
+                                quality/aesthetics scores.
+
+                                IQA-Adapter is based on
+                                <a href="https://github.com/tencent-ailab/IP-Adapter">IP-Adapter</a>
+                                architecture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture -->
+        <section class="section hero is-light">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered" >
+                    <div class="column is-four-fifths">
+                        <div class="content has-text-justified" >
+                            <h2 class="title is-3" >Architecture</h2>
                             <p>
                                 We use the IP-Adapter technique to condition the
                                 generative model on image quality by integrating
@@ -237,9 +263,10 @@
                         </div>
                         <img src="static/images/overall_scheme_converted-1.jpg">
                         <!-- <h2 class="subtitle has-text-centered"> -->
-                            <br>
-                            Overall architecture of the proposed IQA-Adapter. 
-                            It allows to condition diffusion model on outputs of IQA model.
+                        <br>
+                        Overall architecture of the proposed IQA-Adapter.
+                        It allows to condition<br> diffusion model on outputs of IQA
+                        model.
                         <!-- </h2> -->
                     </div>
                 </div>
@@ -254,13 +281,33 @@
                         <div class="content has-text-justified">
                             <h2 class="title is-3">High-quality conditioning</h2>
                             <p>
-                                The results depicted in Figure (a) show that IQA-Adapters trained on various IQA/IAA models consistently improve image quality over the base model, with average relative gains of 4-6%. Conditioning on high target quality (99th percentile) leads to quality improvements across multiple metrics, demonstrating cross-metric transferability. The subjective study in Figure (b) further confirms these results, where participants preferred images generated with quality-conditioned IQA-Adapters over those from the base model, especially at higher quality levels. Pairwise win rates in Figure (c) indicate that images conditioned on the highest quality levels outperform those conditioned on medium or low levels. 
+                                The results depicted in Figure (a) show that
+                                IQA-Adapters trained on various IQA/IAA models
+                                consistently improve image quality over the base
+                                model, with average relative gains of 4-6%.
+                                Conditioning on high target quality (99th
+                                percentile) leads to quality improvements across
+                                multiple metrics, demonstrating cross-metric
+                                transferability. The subjective study in Figure
+                                (b) further confirms these results, where
+                                participants preferred images generated with
+                                quality-conditioned IQA-Adapters over those from
+                                the base model, especially at higher quality
+                                levels. Pairwise win rates in Figure (c)
+                                indicate that images conditioned on the highest
+                                quality levels outperform those conditioned on
+                                medium or low levels.
                             </p>
                         </div>
-                        <img src="static/images/heatmap_with_subj_converted_page-0001.jpg">
+                        <img
+                            src="static/images/heatmap_with_subj_converted_page-0001.jpg">
                         <!-- <h2 class="subtitle has-text-centered"> -->
-                            <br>
-                            (a) IQA-Adapters conditioned on 99th-percentile metrics achieve consistent quality improvements across models and metrics. <br> (b, c) Subjective study results show higher win rates and preference for images generated with higher quality conditioning. 
+                        <br>
+                        (a) IQA-Adapters conditioned on 99th-percentile metrics
+                        achieve<br> consistent quality improvements across models
+                        and metrics. <br> (b, c) Subjective study results show
+                        higher win rates and preference<br> for images generated
+                        with higher quality conditioning.
                         <!-- </h2> -->
                     </div>
                 </div>
@@ -268,20 +315,33 @@
         </section>
 
         <!-- Alignment with qualitative condition -->
-        <section class="section">
+        <section class="section hero is-light">
             <div class="container is-max-desktop">
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-four-fifths">
                         <div class="content has-text-justified">
-                            <h2 class="title is-3">Alignment with qualitative condition</h2>
+                            <h2 class="title is-3">Alignment with qualitative
+                                condition</h2>
                             <p>
-                                Figure illustrates the impact of varying quality levels on generated images using the IQA-Adapter conditioned on different percentiles (1st to 99th) of the target quality metric. The distributions in (a) show progressively higher IQA scores as the target quality increases, while (b) provides example images, showcasing sharper and more detailed visuals at higher quality levels. These results highlight the adapter's ability to align generated image quality with the specified input conditions.
+                                Figure illustrates the impact of varying quality
+                                levels on generated images using the IQA-Adapter
+                                conditioned on different percentiles (1st to
+                                99th) of the target quality metric. The
+                                distributions in (a) show progressively higher
+                                IQA scores as the target quality increases,
+                                while (b) provides example images, showcasing
+                                sharper and more detailed visuals at higher
+                                quality levels. These results highlight the
+                                adapter's ability to align generated image
+                                quality with the specified input conditions.
                             </p>
                         </div>
                         <img src="static/images/quants_standalone_page.jpg">
                         <!-- <h2 class="subtitle has-text-centered"> -->
-                            <br>
-                            Generated image quality improves with higher percentile conditioning, showing sharper details and higher IQA scores.
+                        <br>
+                        Generated image quality improves with higher percentile
+                        conditioning, <br>showing sharper details and higher IQA
+                        scores.
                         <!-- </h2> -->
                     </div>
                 </div>
@@ -296,19 +356,34 @@
                         <div class="content has-text-justified">
                             <h2 class="title is-3">Artifacts and Biases</h2>
                             <p>
-                                We uncover how IQA models can be pushed to their limits, revealing hidden vulnerabilities and biases. Under high guidance scales, the gradient-based method manipulates models to generate adversarial patterns unique to each, while IQA-Adapters expose subtle preferences like TOPIQ’s love for sharpness or LAION-AES’s affinity for vibrant colors. When pushed further with negative-quality guidance, these models inflate scores by exploiting biases, creating overly-stylized but hollow improvements. These discoveries show how IQA-Adapters can serve as powerful tools to probe and challenge the robustness of IQA systems.
+                                We uncover how IQA models can be pushed to their
+                                limits, revealing hidden vulnerabilities and
+                                biases. Under high guidance scales, the
+                                gradient-based method manipulates models to
+                                generate adversarial patterns unique to each,
+                                while IQA-Adapters expose subtle preferences
+                                like TOPIQ’s love for sharpness or LAION-AES’s
+                                affinity for vibrant colors. When pushed further
+                                with negative-quality guidance, these models
+                                inflate scores by exploiting biases, creating
+                                overly-stylized but hollow improvements. These
+                                discoveries show how IQA-Adapters can serve as
+                                powerful tools to probe and challenge the
+                                robustness of IQA systems.
                             </p>
                         </div>
-                        <img src="static/images/Artifacts_preferences_with_text_compressed.jpg">
+                        <img
+                            src="static/images/Artifacts_preferences_with_text_compressed.jpg">
                         <!-- <h2 class="subtitle has-text-centered"> -->
-                            <br>
-                            The gradient-based method produces adversarial artifacts unique to each IQA model, while the IQA-Adapter reveals style biases, such as sharpness or high saturation.
+                        <br>
+                        The gradient-based method produces adversarial artifacts<br>
+                        unique to each IQA model, while the IQA-Adapter reveals
+                        style biases, <br>such as sharpness or high saturation.
                         <!-- </h2> -->
                     </div>
                 </div>
             </div>
         </section>
-
 
         <!-- Paper poster -->
         <!-- <section class="hero is-small is-light">
@@ -324,10 +399,10 @@
   </section> -->
         <!--End paper poster -->
         <!--BibTex citation -->
-        <section class="section" id="BibTeX">
+        <section class="section hero is-light" id="BibTeX">
             <div class="container content is-max-desktop">
                 <h2 class="title">BibTeX</h2>
-                <pre>
+                <pre style="background-color: white;">
                     <code>
 @misc{iqaadapter,
   title={IQA-Adapter: Exploring Knowledge Transfer from Image Quality Assessment to Diffusion-based Generative Models}, 
