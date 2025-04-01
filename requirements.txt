@@ -1,0 +1,14 @@
+accelerate
+datasets
+diffusers
+numpy==1.26.4
+pandas
+Pillow
+safetensors
+torch
+torchvision
+tqdm
+transformers
+pytorch-lightning
+matplotlib
+pyiqa
