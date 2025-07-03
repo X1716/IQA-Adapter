@@ -21,6 +21,10 @@ TODO list:
 Demonstration of guidance on quality (y-axis) and aesthetics (x-axis) scores:
 ![demo image](/assets/2d_viz.png)
 
+Image-to-Image generation with Reference-based IQA-Adapter guided with different distortion references:
+![demo image](/assets/refenence_example.jpg)
+
+Reference-based IQA-Adapter employs information-rich activation space of IQA models to transfer only quality-related features from the reference image *without* leaking its semantics (e.g., objects or color scheme).
 
 ## Run IQA-Adapter
 
