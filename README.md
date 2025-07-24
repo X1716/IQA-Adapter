@@ -3,7 +3,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2412.01794-b31b1b.svg)](https://arxiv.org/abs/2412.01794)
 [![Website](https://img.shields.io/badge/🌎-Website-blue.svg)](https://x1716.github.io/IQA-Adapter/)
 
-**🔥 Accepted to ICCV 2025**
+**🔥 Accepted to ICCV 2025 (Highlight)**
 
 Code for the paper "IQA-Adapter: Exploring Knowledge Transfer from Image Quality Assessment to Diffusion-based Generative Models"
 
