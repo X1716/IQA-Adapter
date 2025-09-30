@@ -61,6 +61,8 @@ train_iqa_adapter.py can be used to train/fine-tune IQA-Adapter. We trained it o
       sbatch slurm_train_script.sh
 Note that this script should be modified for your particular cluster setup (e.g., paths to input/output directories, pyXis container and other things should be specified). It is configured for distributed training with 5 nodes and 8 GPUs per node.
 
+IQA/IAA metric values used during IQA-Adapter training can be downloaded from [this link](https://drive.google.com/drive/folders/1gAhnbXxuNfzXxVAFGKM_AcKmFwL6D_L6?usp=sharing). `CC3M_metric_values.ft` file contains metric values for [CC3M dataset](https://huggingface.co/datasets/pixparse/cc3m-wds), and `LAION-Subset_metric_values.ft` contains values for the [high-quality subset](https://huggingface.co/datasets/bhargavsdesai/laion_improved_aesthetics_6.5plus_with_images) of LAION used from IQA-Adapter fine-tuning. Scripts used to calculate these values can be found in `metric_calculation` folder.
+
 ## Citation
 If you find this work useful for your research, please cite us as follows:
 ```bibtex
